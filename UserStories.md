@@ -17,12 +17,18 @@
 - [ ] A tiffin service provider should have a name(string), address(string), phone number(number), restuarantid(key) and menu(json)
 - [ ] A menu should have a list of meal
 - [ ] A meal should have name, content, and cost
+- [ ] A tiffin service provider should have a list of drivers and should be able to assign Manifest to a drivers
+- [ ] A tiffin service provider should be able to CRUD drivers
 
-2. ### Drivers
+1. ### Drivers
 - [ ] A driver should have name(string), phone number (number), Manifest (List of deliveryDetails)
-- [ ] A Manifest should have an address (string) ,  Order (List)
-- [ ] An Order should have a phone number(number), name (string), a list of meals, and status (Pending/delivered/Other)
+- [ ] A Manifest should have 
+    - Date
+    - list of { address (string) ,  Order (List)}
+- [ ] An Order should have a phone number(number), name (string), a list of meals, media (image) and status (Pending/delivered/Other)
 
-
+1. ### Administrators
+- [ ] An Admin should have access to everything
+- [ ] An Admin should be able to create, read, update and delete anything
 
 
