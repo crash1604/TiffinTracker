@@ -5,14 +5,14 @@ const { logger } = require('./middleware/logger')
 const errorHandler = require('./middleware/errorHandler')
 const cookieParser = require('cookie-parser')
 const cors = require('cors')
-const corsOption = require('./config/corsOptions')
+const corsOptions = require('./config/corsOptions')
 const PORT = process.env.PORT || 3500
 
 // Middleware starts here
 app.use(logger)
-
-app.use(cors(corsOption))
-
+console.log("before cors")
+app.use(cors(corsOptions))
+console.log("aftercors cors")
 app.use(express.json())
 
 app.use(cookieParser())
@@ -32,7 +32,8 @@ app.all('*',(req,res)=>{
         res.type('txt').send('404 Not Found')
     }
 })
-
+console.log("before errhandler")
 app.use(errorHandler)
+console.log("after errhandler")
 
 app.listen(PORT, ()=> console.log(`Server running on prt ${PORT}`))
